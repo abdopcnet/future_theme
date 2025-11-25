@@ -1,5 +1,8 @@
 ### Future Theme
 
+![Version](https://img.shields.io/badge/version-25.11.2025-blue)
+
+
 Future Theme
 
 ### Installation
