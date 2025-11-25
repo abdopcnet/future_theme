@@ -38,124 +38,301 @@ frappe.ui.form.on("Print Style", {
 				const css_content = 
 				
 `
+/* الترويسة العلوية */
 /* top head */
 header.navbar.navbar-expand {
 	background-color: #ffc04d;
 	border-radius: 0.7em;
-}      
+}
 
 /* رأس الصفحة */
 /* page head */
+div.page-head.flex {
+	background-color: #ffe1b3;
 }
 
+/* جسم الصفحة */
+/* page body */
+.page-container {
+	background-color: #ffe1b3;
+}
+
+/* المسافة الفاصلة */
 /* spacer */
+.spacer {
+	background-color: #ffe5b4;
+	transition: background 0.3s;
+	border-radius: 0.7em;
 }
 
+.spacer:hover {
+	background-color: #ffc04d;
+}
+
+/* الشريط الجانبي */
 /* sidebar */
 .layout-side-section {
+	background-color: #edc986;
+	transition: background 0.3s;
+	border-radius: 0.7em;
 }
 
-/*logo*/
+.layout-side-section:hover {
+	background-color: #ffc04d;
+}
+
+/* شعار النظام */
+/* logo */
 .app-logo {
+	transition: transform 0.5s ease;
+}
+
 .app-logo:hover {
+	transform: scale(1.5);
+}
+
+/* كلمة المساعدة في الأعلى */
+/* help word */
 .dropdown-help span {
+	color: rgb(0, 39, 255);
+	transition: color 0.5s ease;
+}
 
+.dropdown-help span:hover {
+	color: rgb(255, 0, 0);
+}
 
-/*opened doc*/
+/* المستند المفتوح - عنصر غير متاح */
+/* opened doc / disabled */
+.disabled {
+	color: rgb(0, 39, 255);
+	transition: color 0.5s ease;
+}
+
+.disabled:hover,
+.disabled:focus {
+	color: rgb(255, 0, 0);
 }
 
 .disabled * {
-/*doctype form tabs*/
-	border-radius: 0.7em;
+	color: inherit !important;
+}
 
-.form-tabs-list .form-tabs .nav-item .nav-link.active {
-	background-color: #ffc04d94;
-/*details tap in customize form*/
+/* تبويبات نموذج الدوكيومنت */
+/* doctype form tabs */
+.form-tabs-list .form-tabs {
+	background-color: #ffe5b4;
+	transition: background 0.3s;
 	border-radius: 0.7em;
 }
+
+.form-tabs-list .form-tabs .nav-item .nav-link {
+	border-radius: 0.4em;
+}
+
+.form-tabs-list .form-tabs .nav-item .nav-link.active {
+	background-color: #ffae42;
 	transition: background 0.3s, color 0.3s;
 }
 
+/* تبويب التفاصيل في نموذج التخصيص */
+/* details tab in customize form */
+div.tabs {
+	background-color: #ffe5b4;
+	transition: background 0.3s;
+	border-radius: 0.7em;
+}
+
+div.tab.active {
+	background-color: #ffae42;
+	font-weight: bold;
+	transition: background 0.3s, color 0.3s;
+}
+
+/* كارد الاختصارات */
+/* cards and shortcuts - shortcut widget */
+.shortcut-widget-box {
 	position: relative;
-	border: 2px solid #ffc04d4d;
+	border: 2px solid #d4af37;
 	border-radius: 8px;
-	box-shadow: 0 0 16px 4px #ffc04d4d;
-	;
+	box-shadow: 0 0 4px 0 #e9c46a33;
 }
 
-	border-radius: 8px;
-	box-shadow: 0 0 4px 0 #ffc04d4d;
-}
-	box-shadow: 0 0 16px 4px #ffc04d4d;
+.shortcut-widget-box:hover {
+	border-color: #ffd700;
+	box-shadow: 0 0 16px 4px #ffe06688;
 }
 
-/* Action Button Styling */
-	/* Default state background: Keep the dark, simple gradient */
+/* كارد الروابط */
+/* cards and shortcuts - links widget */
+.links-widget-box {
+	position: relative;
+	border: 2px solid #d4af37;
+	border-radius: 8px;
+	box-shadow: 0 0 4px 0 #e9c46a33;
+}
+
+.links-widget-box:hover {
+	border-color: #ffd700;
+	box-shadow: 0 0 16px 4px #ffe06688;
+}
+
+/* زر الإجراءات الرئيسي */
+/* primary action button */
+.btn.btn-primary {
+	border-radius: 1em !important;
+	border: none;
 	background: linear-gradient(120deg, #232946, #1a2233, #323e5c, #232946);
+	color: #fff;
+	font-weight: bold;
+	padding: 0.75em 2em;
+	box-shadow: 0 2px 8px 0 #23294655;
 }
 
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
-	/* Hover background: Solid color matching the header (#ffc04d) */
-	background: #ffc04d;
-	/* Font color: Changed to Black (#000) */
-	color: #000;
+	background: linear-gradient(120deg, #ffe066, #ffd700, #fff8e1, #ffe066);
+	color: #181818;
+	box-shadow: 0 0 18px 2px #ffe066b0;
+	outline: none;
+}
 
 .btn.btn-primary>* {
 	position: relative;
 }
 
+/* رأس قائمة السجلات */
 /* list view header */
 .list-row-head {
+	background-color: #ffe5b4;
+	transition: background 0.3s;
+	border-radius: 0.7em;
 }
 
+.list-row-head:hover {
+	background-color: #ffc04d;
+}
 
+/* ترويسة الجداول الداخلية */
 /* tables header */
+.grid-heading-row .row {
+	background-color: #ffe5b4;
+	transition: background 0.3s;
 	border-radius: 0.7em;
+}
 
+.grid-heading-row .row:hover {
+	background-color: #ffc04d;
+}
 
-
+/* تنسيق تقارير الطباعة */
+/* report print CSS */
+.print-format-gutter {
 	text-align: center;
-.table-bordered th {
+}
 
+.table-bordered {
+	text-align: center;
+}
+
+.table-bordered th {
+	background: #dddddd;
+	text-align: center;
+}
+
+.filters-wrapper {
+	display: flex;
+	justify-content: center;
 	align-items: center;
 	width: 100%;
+}
+
+table.table-bordered,
 .table-bordered {
 	border-collapse: collapse;
 	width: 100%;
 }
+
+table.table-bordered th,
+table.table-bordered td {
+	border: 3px solid #111;
 }
 
-/* Style for .custom-block-widget-box */
+table.table-bordered {
+	border: 3px solid #111;
+}
+
+/* كارد مخصص (بلوك مخصص) */
+/* style for .custom-block-widget-box */
+.custom-block-widget-box {
+	position: relative;
+	border: 2px solid #d4af37;
 	border-radius: 8px;
-	border-color: #ffc04d4d;
-	box-shadow: 0 0 16px 4px #ffc04d4d;
+	box-shadow: 0 0 4px 0 #e9c46a33;
 }
 
-	border: 2px solid #ffc04d4d;
+.custom-block-widget-box:hover {
+	border-color: #ffd700;
+	box-shadow: 0 0 16px 4px #ffe06688;
+}
+
+/* كارد لوحات التحكم */
+/* style for .dashboard-widget-box */
+.widget.dashboard-widget-box {
+	position: relative;
+	border: 2px solid #d4af37;
 	border-radius: 8px;
-	border-color: #ffc04d4d;
-	box-shadow: 0 0 16px 4px #ffc04d4d;
+	box-shadow: 0 0 4px 0 #e9c46a33;
 }
 
-	border: 2px solid #ffc04d4d;
+.widget.dashboard-widget-box:hover {
+	border-color: #ffd700;
+	box-shadow: 0 0 16px 4px #ffe06688;
+}
+
+/* كارد الأرقام والإحصائيات */
+/* style for .number-widget-box */
+.widget.number-widget-box {
+	position: relative;
+	border: 2px solid #d4af37;
 	border-radius: 8px;
-	border-color: #ffc04d4d;
-	box-shadow: 0 0 16px 4px #ffc04d4d;
+	box-shadow: 0 0 4px 0 #e9c46a33;
 }
 
-	border: 1px solid #ffc04d4d;
+.widget.number-widget-box:hover {
+	border-color: #ffd700;
+	box-shadow: 0 0 16px 4px #ffe06688;
+}
+
+/* حقول الإدخال الأساسية */
+/* basic input fields */
+.visible-section .control-input>input {
+	border: 1px solid #d4af37;
 	border-radius: 4px;
+}
+
+/* حقول الإكمال التلقائي */
+/* autocomplete input fields */
+.awesomplete>input {
+	border: 1px solid #4a90e2;
 	border-radius: 4px;
 }
+
+/* حقول الاختيار (قوائم منسدلة) */
+/* select dropdown fields */
+select.form-control {
+	border: 1px solid #9c27b0;
 	border-radius: 4px;
 	cursor: pointer;
-.dropdown-help span {
-	display: none;
 }
-				
-					frappe.call({
 
+`;
+				frm.set_value('css', css_content);
+				frm.set_value('custom_theme_color', 'yellow');
+				frm.save().then(() => {
+					// Update Print Settings
+					frappe.call({
+						method: 'frappe.client.set_value',
 						args: {
 							doctype: 'Print Settings',
 							name: 'Print Settings',
