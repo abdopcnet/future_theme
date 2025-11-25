@@ -43,7 +43,12 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Print Style" : "public/js/print_style.js"}
+doctype_js = {
+	"Print Style" : [
+		"public/js/blue_print_style.js",
+		"public/js/yellow_print_style.js"
+	]
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -137,11 +142,13 @@ doctype_js = {"Print Style" : "public/js/print_style.js"}
 # ---------------
 # Hook on document methods and events
 
-doc_events = {
-	"Print Style": {
-		"on_update": "future_theme.api.print_style.update_css_file"
-	}
-}
+# doc_events = {
+# 	"*": {
+# 		"on_update": "method",
+# 		"on_cancel": "method",
+# 		"on_trash": "method"
+# 	}
+# }
 
 # Scheduled Tasks
 # ---------------
