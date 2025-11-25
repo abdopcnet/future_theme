@@ -139,7 +139,7 @@ doctype_js = {"Print Style" : "public/js/print_style.js"}
 
 doc_events = {
 	"Print Style": {
-		"on_save": "future_theme.api.print_style.update_css_file"
+		"on_update": "future_theme.api.print_style.update_css_file"
 	}
 }
 
