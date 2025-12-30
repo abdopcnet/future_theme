@@ -36,10 +36,9 @@ frappe.ui.form.on('Print Style', {
 				__('dark_blue_theme'),
 				function () {
 					// CSS content embedded
-					const css_content = `
-/* top head */
+					const css_content = `/* top head */
 header.navbar.navbar-expand {
-	background-color: #1a3c61;
+	background-color: #1a3c61; /* Darkened to match deep space depth */
 	border-radius: 0.7em;
 }
 
@@ -86,7 +85,7 @@ sidebar .spacer {
 
 /*help word*/
 .dropdown-help span {
-	color: #4da8da;
+	color: #4da8da; /* Bright sky blue like stars for contrast */
 	transition: color 0.5s ease;
 }
 
@@ -168,6 +167,7 @@ div.tab.active {
 .btn.btn-primary {
 	border-radius: 1em !important;
 	border: none;
+	/* Default state background: Keep the dark, simple gradient but tweaked to match deep space */
 	background: linear-gradient(120deg, #0d1b2a, #1b263b, #415a77, #0d1b2a);
 	color: #fff;
 	font-weight: bold;
@@ -178,7 +178,7 @@ div.tab.active {
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
 	background: #1a3c61;
-	color: #fff;
+	color: #fff; /* Changed to white to ensure readability on blue background */
 	box-shadow: 0 0 5px 2px #1a3c61;
 	outline: none;
 }
@@ -292,7 +292,7 @@ table.table-bordered {
 
 /* Autocomplete fields */
 .awesomplete > input {
-	border: 1px solid #4da8da;
+	border: 1px solid #4da8da; /* Light blue for borders */
 	border-radius: 4px;
 }
 
@@ -302,6 +302,18 @@ select.form-control {
 	border-radius: 4px;
 	cursor: pointer;
 }
+
+/* hide help menu
+  .dropdown-help span {
+	display: none;
+  }
+  */
+
+/* Close sidebar by default on page load
+  .layout-side-section {
+	display: none;
+  }
+  */
 
 body .container {
 	width: 100% !important;
@@ -315,7 +327,6 @@ body .container {
 .nav a:hover {
 	color: #c19797;
 }
-
 `;
 
 					frm.set_value('css', css_content);
