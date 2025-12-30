@@ -32,6 +32,11 @@ app_license = "mit"
 # web_include_css = "/assets/future_theme/css/future_theme.css"
 # web_include_js = "/assets/future_theme/js/future_theme.js"
 
+web_include_css = [
+    "/assets/future_theme/css/login_bundle.css"
+]
+
+
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "future_theme/public/scss/website"
 
