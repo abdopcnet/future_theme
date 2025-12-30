@@ -1,36 +1,50 @@
-### Future Theme
+# Future Theme
 
-![Version](https://img.shields.io/badge/version-25.11.2025-blue)
+![Version](https://img.shields.io/badge/version-30.12.2025-blue)
 
+Custom print style themes for Frappe/ERPNext with color customization.
 
-Future Theme
+## Features
 
-### Installation
+-   **Custom Print Styles**: Extends Print Style DocType with theme color picker
+-   **Blue Theme**: Professional blue color scheme for print formats
+-   **Yellow Theme**: Bright yellow color scheme for print formats
+-   **Color Customization**: Custom theme color field for personalized styling
+-   **Dynamic CSS Injection**: Real-time theme preview and application
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+## Quick Start
 
 ```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app future_theme
+bench get-app future_theme --branch develop
+bench --site [site_name] install-app future_theme
 ```
 
-### Contributing
+## Usage
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+1. Navigate to **Print Style** DocType
+2. Create or edit a Print Style with `print_style_name = "future"`
+3. Select your preferred theme color using the **Theme Color** field
+4. Use **Blue Theme** or **Yellow Theme** buttons to apply preset styles
+5. Customize CSS in the CSS field for advanced styling
+
+## Features Preview
+
+-   Custom theme color picker integration
+-   Blue and yellow preset themes
+-   Dynamic CSS injection for print previews
+-   Print style customization interface
+
+## Contributing
+
+This app uses `pre-commit` for code formatting and linting:
 
 ```bash
 cd apps/future_theme
 pre-commit install
 ```
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+Tools: ruff, eslint, prettier, pyupgrade
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+## License
 
-### License
-
-mit
+MIT
