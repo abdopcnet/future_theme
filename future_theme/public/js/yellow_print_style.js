@@ -20,46 +20,40 @@
 	};
 })();
 
-frappe.ui.form.on("Print Style", {
+frappe.ui.form.on('Print Style', {
 	refresh(frm) {
 		// Only work on Print Style with print_style_name = "future"
-		if (frm.doc.print_style_name !== "future") {
+		if (frm.doc.print_style_name !== 'future') {
 			return;
 		}
-		
+
 		// Remove existing button if any
 		$('.btn-yellow-theme').remove();
-		
+
 		// Yellow theme button
-		frm.page.add_inner_button(
-			__('yellow_theme'),
-			function() {
-				// CSS content embedded
-				const css_content = 
-				
-`
-/* الترويسة العلوية */
-/* top head */
+		frm.page
+			.add_inner_button(
+				__('yellow_theme'),
+				function () {
+					// CSS content embedded
+					const css_content = `/* top head */
 header.navbar.navbar-expand {
 	background-color: #ffc04d;
 	border-radius: 0.7em;
 }
 
-/* رأس الصفحة */
-/* page head */
+/*Page Head*/
 div.page-head.flex {
 	background-color: #ffe1b3;
 }
 
-/* جسم الصفحة */
 /* page body */
 .page-container {
 	background-color: #ffe1b3;
 }
 
-/* المسافة الفاصلة */
 /* spacer */
-.spacer {
+sidebar .spacer {
 	background-color: #ffe5b4;
 	transition: background 0.3s;
 	border-radius: 0.7em;
@@ -69,7 +63,6 @@ div.page-head.flex {
 	background-color: #ffc04d;
 }
 
-/* الشريط الجانبي */
 /* sidebar */
 .layout-side-section {
 	background-color: #edc986;
@@ -81,8 +74,7 @@ div.page-head.flex {
 	background-color: #ffc04d;
 }
 
-/* شعار النظام */
-/* logo */
+/*logo*/
 .app-logo {
 	transition: transform 0.5s ease;
 }
@@ -91,8 +83,7 @@ div.page-head.flex {
 	transform: scale(1.5);
 }
 
-/* كلمة المساعدة في الأعلى */
-/* help word */
+/*help word*/
 .dropdown-help span {
 	color: rgb(0, 39, 255);
 	transition: color 0.5s ease;
@@ -102,8 +93,7 @@ div.page-head.flex {
 	color: rgb(255, 0, 0);
 }
 
-/* المستند المفتوح - عنصر غير متاح */
-/* opened doc / disabled */
+/*opened doc*/
 .disabled {
 	color: rgb(0, 39, 255);
 	transition: color 0.5s ease;
@@ -118,8 +108,8 @@ div.page-head.flex {
 	color: inherit !important;
 }
 
-/* تبويبات نموذج الدوكيومنت */
-/* doctype form tabs */
+/* doctype tabs */
+/*doctype form tabs*/
 .form-tabs-list .form-tabs {
 	background-color: #ffe5b4;
 	transition: background 0.3s;
@@ -132,11 +122,10 @@ div.page-head.flex {
 
 .form-tabs-list .form-tabs .nav-item .nav-link.active {
 	background-color: #ffae42;
-	transition: background 0.3s, color 0.3s;
+	transition: background 1s, color 1s;
 }
 
-/* تبويب التفاصيل في نموذج التخصيص */
-/* details tab in customize form */
+/*details tap in customize form*/
 div.tabs {
 	background-color: #ffe5b4;
 	transition: background 0.3s;
@@ -149,8 +138,7 @@ div.tab.active {
 	transition: background 0.3s, color 0.3s;
 }
 
-/* كارد الاختصارات */
-/* cards and shortcuts - shortcut widget */
+/* cards and shortcuts */
 .shortcut-widget-box {
 	position: relative;
 	border: 2px solid #d4af37;
@@ -163,8 +151,6 @@ div.tab.active {
 	box-shadow: 0 0 16px 4px #ffe06688;
 }
 
-/* كارد الروابط */
-/* cards and shortcuts - links widget */
 .links-widget-box {
 	position: relative;
 	border: 2px solid #d4af37;
@@ -177,16 +163,16 @@ div.tab.active {
 	box-shadow: 0 0 16px 4px #ffe06688;
 }
 
-/* زر الإجراءات الرئيسي */
-/* primary action button */
+/* Action Button Styling */
 .btn.btn-primary {
 	border-radius: 1em !important;
 	border: none;
-	background: linear-gradient(120deg, #232946, #1a2233, #323e5c, #232946);
+	/* Default state background: Keep the dark, simple gradient but tweaked to match deep space */
+	background: linear-gradient(120deg, #0d1b2a, #1b263b, #415a77, #0d1b2a);
 	color: #fff;
 	font-weight: bold;
 	padding: 0.75em 2em;
-	box-shadow: 0 2px 8px 0 #23294655;
+	box-shadow: 0 2px 8px 0 #0d1b2a55;
 }
 
 .btn.btn-primary:hover,
@@ -197,11 +183,10 @@ div.tab.active {
 	outline: none;
 }
 
-.btn.btn-primary>* {
+.btn.btn-primary > * {
 	position: relative;
 }
 
-/* رأس قائمة السجلات */
 /* list view header */
 .list-row-head {
 	background-color: #ffe5b4;
@@ -213,7 +198,6 @@ div.tab.active {
 	background-color: #ffc04d;
 }
 
-/* ترويسة الجداول الداخلية */
 /* tables header */
 .grid-heading-row .row {
 	background-color: #ffe5b4;
@@ -225,8 +209,7 @@ div.tab.active {
 	background-color: #ffc04d;
 }
 
-/* تنسيق تقارير الطباعة */
-/* report print CSS */
+/* ====Report Css ========== */
 .print-format-gutter {
 	text-align: center;
 }
@@ -262,8 +245,7 @@ table.table-bordered {
 	border: 3px solid #111;
 }
 
-/* كارد مخصص (بلوك مخصص) */
-/* style for .custom-block-widget-box */
+/* Style for .custom-block-widget-box */
 .custom-block-widget-box {
 	position: relative;
 	border: 2px solid #d4af37;
@@ -276,8 +258,7 @@ table.table-bordered {
 	box-shadow: 0 0 16px 4px #ffe06688;
 }
 
-/* كارد لوحات التحكم */
-/* style for .dashboard-widget-box */
+/* Style for .dashboard-widget-box */
 .widget.dashboard-widget-box {
 	position: relative;
 	border: 2px solid #d4af37;
@@ -290,8 +271,7 @@ table.table-bordered {
 	box-shadow: 0 0 16px 4px #ffe06688;
 }
 
-/* كارد الأرقام والإحصائيات */
-/* style for .number-widget-box */
+/* Style for .number-widget-box */
 .widget.number-widget-box {
 	position: relative;
 	border: 2px solid #d4af37;
@@ -304,53 +284,75 @@ table.table-bordered {
 	box-shadow: 0 0 16px 4px #ffe06688;
 }
 
-/* حقول الإدخال الأساسية */
-/* basic input fields */
-.visible-section .control-input>input {
+/* Input fields */
+.visible-section .control-input > input {
 	border: 1px solid #d4af37;
 	border-radius: 4px;
 }
 
-/* حقول الإكمال التلقائي */
-/* autocomplete input fields */
-.awesomplete>input {
+/* Autocomplete fields */
+.awesomplete > input {
 	border: 1px solid #4a90e2;
 	border-radius: 4px;
 }
 
-/* حقول الاختيار (قوائم منسدلة) */
-/* select dropdown fields */
+/* Select fields */
 select.form-control {
 	border: 1px solid #9c27b0;
 	border-radius: 4px;
 	cursor: pointer;
 }
 
-`;
-				frm.set_value('css', css_content);
-				frm.set_value('custom_theme_color', 'yellow');
-				frm.save().then(() => {
-					// Update Print Settings
-					frappe.call({
-						method: 'frappe.client.set_value',
-						args: {
-							doctype: 'Print Settings',
-							name: 'Print Settings',
-							fieldname: 'print_style',
-							value: 'future'
-						},
-						callback: function(r) {
-							if (!r.exc) {
-								// Clear cache and reload
-								clearCacheAndReload();
-							}
-						}
-					});
-				});
-			},
-			null,
-			'warning'
-		).addClass("btn-yellow-theme").css({'background-color': '#ffc04d', 'color': '#000', 'border-color': '#ffc04d'});
-	}
-});
+/* hide help menu
+  .dropdown-help span {
+	display: none;
+  }
+  */
 
+/* Close sidebar by default on page load
+  .layout-side-section {
+	display: none;
+  }
+  */
+
+body .container {
+	width: 100% !important;
+	max-width: 100% !important;
+}
+
+.nav a {
+	color: rgba(255, 255, 255, 0.73);
+}
+
+.nav a:hover {
+	color: #c19797;
+}
+`;
+					frm.set_value('css', css_content);
+					frm.set_value('custom_theme_color', 'yellow');
+					frm.save().then(() => {
+						// Update Print Settings
+						frappe.call({
+							method: 'frappe.client.set_value',
+							args: {
+								doctype: 'Print Settings',
+								name: 'Print Settings',
+								fieldname: 'print_style',
+								value: 'future',
+							},
+							callback: function (r) {
+								if (!r.exc) {
+									// Clear cache and reload
+									clearCacheAndReload();
+								}
+							},
+						});
+					});
+				},
+				null,
+				'warning',
+			)
+			.addClass('btn-yellow-theme')
+			.css({ 'background-color': '#ffc04d', color: '#000', 'border-color': '#ffc04d' });
+	},
+});
