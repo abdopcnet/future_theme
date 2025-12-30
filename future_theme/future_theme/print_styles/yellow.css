@@ -15,7 +15,7 @@ div.page-head.flex {
 }
 
 /* spacer */
-.spacer {
+sidebar .spacer {
 	background-color: #ffe5b4;
 	transition: background 0.3s;
 	border-radius: 0.7em;
@@ -84,7 +84,7 @@ div.page-head.flex {
 
 .form-tabs-list .form-tabs .nav-item .nav-link.active {
 	background-color: #ffae42;
-	transition: background 0.3s, color 0.3s;
+	transition: background 1s, color 1s;
 }
 
 /*details tap in customize form*/
@@ -99,7 +99,6 @@ div.tab.active {
 	font-weight: bold;
 	transition: background 0.3s, color 0.3s;
 }
-
 
 /* cards and shortcuts */
 .shortcut-widget-box {
@@ -130,12 +129,12 @@ div.tab.active {
 .btn.btn-primary {
 	border-radius: 1em !important;
 	border: none;
-	/* Default state background: Keep the dark, simple gradient */
-	background: linear-gradient(120deg, #232946, #1a2233, #323e5c, #232946);
+	/* Default state background: Keep the dark, simple gradient but tweaked to match deep space */
+	background: linear-gradient(120deg, #0d1b2a, #1b263b, #415a77, #0d1b2a);
 	color: #fff;
 	font-weight: bold;
 	padding: 0.75em 2em;
-	box-shadow: 0 2px 8px 0 #23294655;
+	box-shadow: 0 2px 8px 0 #0d1b2a55;
 }
 
 .btn.btn-primary:hover,
@@ -146,7 +145,7 @@ div.tab.active {
 	outline: none;
 }
 
-.btn.btn-primary>* {
+.btn.btn-primary > * {
 	position: relative;
 }
 
@@ -160,7 +159,6 @@ div.tab.active {
 .list-row-head:hover {
 	background-color: #ffc04d;
 }
-
 
 /* tables header */
 .grid-heading-row .row {
@@ -248,19 +246,19 @@ table.table-bordered {
 	box-shadow: 0 0 16px 4px #ffe06688;
 }
 
-/* حقول الإدخال الأساسية */
-.visible-section .control-input>input {
+/* Input fields */
+.visible-section .control-input > input {
 	border: 1px solid #d4af37;
 	border-radius: 4px;
 }
 
-/* حقول الإكمال التلقائي */
-.awesomplete>input {
+/* Autocomplete fields */
+.awesomplete > input {
 	border: 1px solid #4a90e2;
 	border-radius: 4px;
 }
 
-/* حقول الاختيار */
+/* Select fields */
 select.form-control {
 	border: 1px solid #9c27b0;
 	border-radius: 4px;
@@ -268,21 +266,26 @@ select.form-control {
 }
 
 /* hide help menu
-.dropdown-help span {
-  display: none;
-}
-*/
+  .dropdown-help span {
+	display: none;
+  }
+  */
 
 /* Close sidebar by default on page load
-.layout-side-section {
-  display: none;
-}
-*/
+  .layout-side-section {
+	display: none;
+  }
+  */
 
 body .container {
 	width: 100% !important;
 	max-width: 100% !important;
 }
 
+.nav a {
+	color: rgba(255, 255, 255, 0.73);
+}
 
-125666555@stc.net.sa
+.nav a:hover {
+	color: #c19797;
+}
