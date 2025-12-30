@@ -1,0 +1,204 @@
+/* Ensure box-sizing is applied globally for consistent layout behavior */
+* {
+	box-sizing: border-box;
+}
+
+/* General body styling for background image */
+body {
+	font-family: 'Inter', sans-serif; /* Use Inter font as specified */
+	/* Changed to actual background image URL for the site */
+	background-image: url('/files/login.jpg');
+	background-size: cover; /* Full background coverage */
+	background-position: center; /* Center the background */
+	background-repeat: no-repeat; /* No background repetition */
+	background-attachment: fixed; /* Fix background on scroll */
+	display: flex; /* Use Flexbox to center content */
+	justify-content: center; /* Horizontal centering */
+	align-items: center; /* Vertical centering */
+	min-height: 100vh; /* Ensure page takes full screen height */
+	margin: 0; /* Remove default body margin */
+	padding: 20px; /* Add some padding around content for small screens */
+}
+
+/* Container for login elements */
+.for-login {
+	width: 100%; /* Take full width of parent element */
+	max-width: 400px; /* Maximum width for large screens (reduced) */
+	margin: 0 auto; /* Center the container */
+}
+
+/* Heading styling */
+.for-login h4 {
+	width: 100%; /* Ensure title takes full available width */
+	text-align: center; /* Center the text */
+	margin-bottom: 20px; /* Space below title */
+	color: #191970; /* Dark navy color */
+	font-weight: 900; /* Make font bolder */
+	font-size: 1.8em; /* Slightly increase font size */
+	letter-spacing: 1.5px; /* Add spacing between letters for distinction */
+	text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Light text shadow by default */
+	transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* Glowing effect on hover */
+.for-login h4:hover {
+	text-shadow: 0 0 10px #4169e1, /* Royal blue glow */ 0 0 20px #4169e1, 0 0 30px #4169e1,
+		0 0 40px #000080; /* Deeper navy glow */
+	transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Page card styling */
+.for-login .page-card {
+	background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for card */
+	border-radius: 15px; /* Rounded card edges */
+	padding: 25px; /* Padding inside card (reduced) */
+	box-shadow: 0px 0px 10px 1px rgba(149, 61, 61, 0.41) !important; /* Initial shadow */
+	transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+	width: 100%; /* Take full width of parent element */
+	max-width: 400px; /* Maximum width for large screens (reduced) */
+	margin: 0 auto; /* Center the card */
+}
+
+.for-login .page-card:hover {
+	box-shadow: 0px 0px 10px 1px #466a47 !important; /* Shadow on hover */
+}
+
+/* Form group styling */
+.form-group {
+	margin-bottom: 15px; /* Space between form groups */
+}
+
+/* Input field styling */
+.form-control {
+	width: 100%; /* Inputs take full width of parent element */
+	padding: 10px 15px; /* Padding inside inputs */
+	border: 1px solid #ddd; /* Light gray border */
+	border-radius: 8px; /* Rounded input edges */
+	box-shadow: 0px 0px 10px 1px rgba(149, 61, 61, 0.41) !important; /* Initial shadow */
+	transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.form-control:focus {
+	outline: none; /* Remove default focus outline */
+	border-color: #678fb1; /* Highlight border on focus */
+}
+
+input:hover {
+	box-shadow: 0px 0px 10px 1px #466a47 !important; /* Shadow on hover for inputs */
+}
+
+/* Login button styling */
+.for-login .page-card .btn-login {
+	width: 100%; /* Button takes full width */
+	padding: 12px 20px; /* Padding inside button */
+	border: none; /* No border */
+	border-radius: 8px; /* Rounded edges */
+	cursor: pointer; /* Hand cursor on hover */
+	font-size: 16px; /* Font size */
+	font-weight: 600; /* Bold font */
+	text-align: center; /* Center text */
+	margin-top: 20px; /* Space above button */
+
+	/* Gradient and text styles from used CSS */
+	background-image: linear-gradient(
+		to right,
+		#bdb591 0%,
+		#f2f2f2 25%,
+		#dbdbdb 50%,
+		#eaeaea 100%
+	) !important;
+	color: #dc1212;
+	text-shadow: 0px 1px 1px rgb(255, 255, 255), 0px -1px 1px rgb(0, 0, 0);
+	box-shadow: 0px 0px 10px 1px rgba(149, 61, 61, 0.41) !important;
+	background-size: 400% 100%; /* For animation */
+	animation: gradientAnimation 5s ease infinite; /* Animation */
+	transition: box-shadow 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.for-login .page-card .btn-login:hover {
+	color: #2f8338; /* Text color on hover */
+	box-shadow: 0px 0px 10px 1px #466a47 !important; /* Shadow on hover */
+}
+
+/* Forgot password link styling */
+.forgot-password-message {
+	text-align: center; /* Center the message */
+	margin-top: 15px; /* Space above message */
+}
+
+.forgot-password-message a {
+	color: #678fb1; /* Link color */
+	text-decoration: none; /* No underline */
+	padding: 5px 10px; /* Padding for click area */
+	border-radius: 5px; /* Rounded edges */
+	box-shadow: 0px 0px 5px 0px rgba(149, 61, 61, 0.41) !important; /* Initial shadow */
+	transition: box-shadow 0.3s ease; /* Smooth transition */
+	display: inline-block; /* Allow padding and shadow */
+}
+
+.forgot-password-message a:hover {
+	box-shadow: 0px 0px 5px 0px #466a47 !important; /* Shadow on hover */
+}
+
+/* Navbar styling (if used, though not directly in login form) */
+.navbar-light {
+	background-image: linear-gradient(
+		to right,
+		rgba(78, 74, 51, 0.405),
+		rgba(63, 88, 138, 0.51) 100%
+	) !important;
+	color: #dc1212;
+	text-shadow: 0px 1px 1px rgb(255, 255, 255), 0px -1px 1px rgb(0, 0, 0);
+	box-shadow: 0px 0px 10px 1px rgba(149, 61, 61, 0.41) !important;
+	padding: 15px; /* Add padding to navigation bar */
+	text-align: center; /* Center content in navigation bar */
+}
+
+.navbar-light:hover {
+	background-image: linear-gradient(
+		to right,
+		#bdb591 0%,
+		#f2f2f2 25%,
+		#dbdbdb 50%,
+		#eaeaea 100%
+	) !important;
+	color: #2f8338;
+	text-shadow: 0px 1px 1px rgb(255, 255, 255), 0px -1px 1px rgb(0, 0, 0);
+	box-shadow: 0px 0px 10px 1px #466a47 !important;
+}
+
+/* Image styling within page card head */
+.for-login .page-card-head img {
+	border-radius: 20px;
+	max-height: 180px;
+	height: auto; /* Maintain aspect ratio */
+	width: auto; /* Maintain aspect ratio */
+	display: block; /* Make it block element for centering */
+	margin: 0 auto 20px auto; /* Center horizontally and add space below */
+	max-width: 100%; /* Ensure image doesn't exceed container */
+}
+
+/* Keyframe animation for button gradient */
+@keyframes gradientAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+/* Hide the web-footer element */
+.web-footer {
+	display: none !important;
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 576px) {
+	body {
+		padding: 10px; /* Reduce padding on very small screens */
+	}
+	.for-login .page-card {
+		padding: 20px; /* Reduce card padding */
+	}
+}
