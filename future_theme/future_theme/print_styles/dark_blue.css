@@ -1,6 +1,6 @@
 /* top head */
 header.navbar.navbar-expand {
-	background-color: #1a3c61; /* تم التغميق ليتناسب مع عمق الفضاء */
+	background-color: #1a3c61; /* Darkened to match deep space depth */
 	border-radius: 0.7em;
 }
 
@@ -47,7 +47,7 @@ sidebar .spacer {
 
 /*help word*/
 .dropdown-help span {
-	color: #4da8da; /* أزرق سماوي مضيء مثل النجوم للتباين */
+	color: #4da8da; /* Bright sky blue like stars for contrast */
 	transition: color 0.5s ease;
 }
 
@@ -140,7 +140,7 @@ div.tab.active {
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
 	background: #1a3c61;
-	color: #fff; /* تم التغيير للأبيض لضمان القراءة على الخلفية الزرقاء */
+	color: #fff; /* Changed to white to ensure readability on blue background */
 	box-shadow: 0 0 5px 2px #1a3c61;
 	outline: none;
 }
@@ -246,19 +246,19 @@ table.table-bordered {
 	box-shadow: 0 0 16px 4px #1a3c614d;
 }
 
-/* حقول الإدخال الأساسية */
+/* Input fields */
 .visible-section .control-input > input {
 	border: 1px solid #1a3c614d;
 	border-radius: 4px;
 }
 
-/* حقول الإكمال التلقائي */
+/* Autocomplete fields */
 .awesomplete > input {
-	border: 1px solid #4da8da; /* أزرق فاتح للحواف */
+	border: 1px solid #4da8da; /* Light blue for borders */
 	border-radius: 4px;
 }
 
-/* حقول الاختيار */
+/* Select fields */
 select.form-control {
 	border: 1px solid #1a3c61;
 	border-radius: 4px;
