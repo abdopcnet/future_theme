@@ -20,328 +20,339 @@
 	};
 })();
 
-frappe.ui.form.on("Print Style", {
+frappe.ui.form.on('Print Style', {
 	refresh(frm) {
 		// Only work on Print Style with print_style_name = "future"
-		if (frm.doc.print_style_name !== "future") {
+		if (frm.doc.print_style_name !== 'future') {
 			return;
 		}
-		
+
 		// Remove existing button if any
 		$('.btn-blue-theme').remove();
-		
+
 		// Blue theme button
-		frm.page.add_inner_button(
-			__('blue_theme'),
-			function() {
-				// CSS content embedded
-				const css_content = `
-/* top head */
+		frm.page
+			.add_inner_button(
+				__('blue_theme'),
+				function () {
+					// CSS content embedded
+					const css_content = `/* top head */
 header.navbar.navbar-expand {
-  background-color: #7293b0;
-  border-radius: 0.7em;
+	background-color: #7293b0;
+	border-radius: 0.7em;
 }
 
 /*Page Head*/
 div.page-head.flex {
-  background-color: #678fb14d;
+	background-color: #678fb14d;
 }
 
 /* page body */
 .page-container {
-  background-color: #678fb14d;
+	background-color: #678fb14d;
 }
 
 /* spacer */
-.spacer {
-  background-color: #678fb14d;
-  transition: background 0.3s;
-  border-radius: 0.7em;
+sidebar .spacer {
+	background-color: #678fb14d;
+	transition: background 0.3s;
+	border-radius: 0.7em;
 }
 
 .spacer:hover {
-  background-color: #678fb1b8;
+	background-color: #678fb1b8;
 }
 
 /* sidebar */
 .layout-side-section {
-  background-color: #678fb14d;
-  transition: background 0.3s;
-  border-radius: 0.7em;
+	background-color: #678fb14d;
+	transition: background 0.3s;
+	border-radius: 0.7em;
 }
 
 .layout-side-section:hover {
-  background-color: #678fb1b8;
+	background-color: #678fb1b8;
 }
 
 /*logo*/
 .app-logo {
-  transition: transform 0.5s ease;
+	transition: transform 0.5s ease;
 }
 
 .app-logo:hover {
-  transform: scale(1.5);
+	transform: scale(1.5);
 }
 
 /*help word*/
 .dropdown-help span {
-  color: rgb(0, 39, 255);
-  transition: color 0.5s ease;
+	color: rgb(0, 39, 255);
+	transition: color 0.5s ease;
 }
 
 .dropdown-help span:hover {
-  color: rgb(255, 0, 0);
+	color: rgb(255, 0, 0);
 }
-
 
 /*opened doc*/
 .disabled {
-  color: rgb(0, 39, 255);
-  transition: color 0.5s ease;
+	color: rgb(0, 39, 255);
+	transition: color 0.5s ease;
 }
 
 .disabled:hover,
 .disabled:focus {
-  color: rgb(255, 0, 0);
+	color: rgb(255, 0, 0);
 }
 
 .disabled * {
-  color: inherit !important;
+	color: inherit !important;
 }
 
 /* doctype tabs */
 /*doctype form tabs*/
 .form-tabs-list .form-tabs {
-  background-color: #678fb14f;
-  transition: background 0.3s;
-  border-radius: 0.7em;
+	background-color: #678fb14f;
+	transition: background 0.3s;
+	border-radius: 0.7em;
 }
 
 .form-tabs-list .form-tabs .nav-item .nav-link {
-  border-radius: 0.4em;
+	border-radius: 0.4em;
 }
 
 .form-tabs-list .form-tabs .nav-item .nav-link.active {
-  background-color: #678fb194;
-  transition: background 1s, color 1s;
+	background-color: #678fb194;
+	transition: background 1s, color 1s;
 }
 
 /*details tap in customize form*/
 div.tabs {
-  background-color: #678fb14f;
-  transition: background 0.3s;
-  border-radius: 0.7em;
+	background-color: #678fb14f;
+	transition: background 0.3s;
+	border-radius: 0.7em;
 }
 
 div.tab.active {
-  background-color: #678fb194;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
+	background-color: #678fb194;
+	font-weight: bold;
+	transition: background 0.3s, color 0.3s;
 }
-
 
 /* cards and shortcuts */
 .shortcut-widget-box {
-  position: relative;
-  border: 2px solid #678fb14d;
-  border-radius: 8px;
-  box-shadow: 0 0 4px 0 #678fb14d;
+	position: relative;
+	border: 2px solid #678fb14d;
+	border-radius: 8px;
+	box-shadow: 0 0 4px 0 #678fb14d;
 }
 
 .shortcut-widget-box:hover {
-  border-color: #678fb14d;
-  box-shadow: 0 0 16px 4px #678fb14d;
-  ;
+	border-color: #678fb14d;
+	box-shadow: 0 0 16px 4px #678fb14d;
 }
 
 .links-widget-box {
-  position: relative;
-  border: 2px solid #678fb14d;
-  border-radius: 8px;
-  box-shadow: 0 0 4px 0 #678fb14d;
+	position: relative;
+	border: 2px solid #678fb14d;
+	border-radius: 8px;
+	box-shadow: 0 0 4px 0 #678fb14d;
 }
 
 .links-widget-box:hover {
-  border-color: #678fb14d;
-  box-shadow: 0 0 16px 4px #678fb14d;
+	border-color: #678fb14d;
+	box-shadow: 0 0 16px 4px #678fb14d;
 }
 
 /* Action Button Styling */
 .btn.btn-primary {
-  border-radius: 1em !important;
-  border: none;
-  /* Default state background: Keep the dark, simple gradient */
-  background: linear-gradient(120deg, #232946, #1a2233, #323e5c, #232946);
-  color: #fff;
-  font-weight: bold;
-  padding: 0.75em 2em;
-  box-shadow: 0 2px 8px 0 #23294655;
+	border-radius: 1em !important;
+	border: none;
+	/* Default state background: Keep the dark, simple gradient but tweaked to match deep space */
+	background: linear-gradient(120deg, #0d1b2a, #1b263b, #415a77, #0d1b2a);
+	color: #fff;
+	font-weight: bold;
+	padding: 0.75em 2em;
+	box-shadow: 0 2px 8px 0 #0d1b2a55;
 }
 
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
-  /* Hover background: Solid color matching the header (#7293b0) */
-  background: #7293b0;
-  /* Font color: Changed to Black (#000) */
-  color: #000;
-  /* Simple, subtle shadow: Light glow in the same blue-gray color */
-  box-shadow: 0 0 5px 2px #7293b0;
-  outline: none;
+	background: #7293b0;
+	color: #000;
+	box-shadow: 0 0 5px 2px #7293b0;
+	outline: none;
 }
 
-.btn.btn-primary>* {
-  position: relative;
+.btn.btn-primary > * {
+	position: relative;
 }
 
 /* list view header */
 .list-row-head {
-  background-color: #678fb14f;
-  transition: background 0.3s;
-  border-radius: 0.7em;
+	background-color: #678fb14f;
+	transition: background 0.3s;
+	border-radius: 0.7em;
 }
 
 .list-row-head:hover {
-  background-color: #678fb194;
+	background-color: #678fb194;
 }
-
 
 /* tables header */
 .grid-heading-row .row {
-  background-color: #678fb14f;
-  transition: background 0.3s;
-  border-radius: 0.7em;
+	background-color: #678fb14f;
+	transition: background 0.3s;
+	border-radius: 0.7em;
 }
 
 .grid-heading-row .row:hover {
-  background-color: #678fb194;
+	background-color: #678fb194;
 }
-
-
-
-
-
 
 /* ====Report Css ========== */
 .print-format-gutter {
-  text-align: center;
+	text-align: center;
 }
 
 .table-bordered {
-  text-align: center;
+	text-align: center;
 }
 
 .table-bordered th {
-  background: #dddddd;
-  text-align: center;
+	background: #dddddd;
+	text-align: center;
 }
 
 .filters-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
 }
 
 table.table-bordered,
 .table-bordered {
-  border-collapse: collapse;
-  width: 100%;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 table.table-bordered th,
 table.table-bordered td {
-  border: 3px solid #111;
+	border: 3px solid #111;
 }
 
 table.table-bordered {
-  border: 3px solid #111;
+	border: 3px solid #111;
 }
 
 /* Style for .custom-block-widget-box */
 .custom-block-widget-box {
-  position: relative;
-  border: 2px solid #678fb14d;
-  border-radius: 8px;
-  box-shadow: 0 0 4px 0 #678fb14d;
+	position: relative;
+	border: 2px solid #678fb14d;
+	border-radius: 8px;
+	box-shadow: 0 0 4px 0 #678fb14d;
 }
 
 .custom-block-widget-box:hover {
-  border-color: #678fb14d;
-  box-shadow: 0 0 16px 4px #678fb14d;
+	border-color: #678fb14d;
+	box-shadow: 0 0 16px 4px #678fb14d;
 }
 
 /* Style for .dashboard-widget-box */
 .widget.dashboard-widget-box {
-  position: relative;
-  border: 2px solid #678fb14d;
-  border-radius: 8px;
-  box-shadow: 0 0 4px 0 #678fb14d;
+	position: relative;
+	border: 2px solid #678fb14d;
+	border-radius: 8px;
+	box-shadow: 0 0 4px 0 #678fb14d;
 }
 
 .widget.dashboard-widget-box:hover {
-  border-color: #678fb14d;
-  box-shadow: 0 0 16px 4px #678fb14d;
+	border-color: #678fb14d;
+	box-shadow: 0 0 16px 4px #678fb14d;
 }
 
 /* Style for .number-widget-box */
 .widget.number-widget-box {
-  position: relative;
-  border: 2px solid #678fb14d;
-  border-radius: 8px;
-  box-shadow: 0 0 4px 0 #678fb14d;
+	position: relative;
+	border: 2px solid #678fb14d;
+	border-radius: 8px;
+	box-shadow: 0 0 4px 0 #678fb14d;
 }
 
 .widget.number-widget-box:hover {
-  border-color: #678fb14d;
-  box-shadow: 0 0 16px 4px #678fb14d;
+	border-color: #678fb14d;
+	box-shadow: 0 0 16px 4px #678fb14d;
 }
 
-
-/* حقول الإدخال الأساسية */
-.visible-section .control-input>input {
-  border: 1px solid #678fb14d;
-  border-radius: 4px;
+/* Input fields */
+.visible-section .control-input > input {
+	border: 1px solid #678fb14d;
+	border-radius: 4px;
 }
 
-/* حقول الإكمال التلقائي */
-.awesomplete>input {
-  border: 1px solid #4a90e2;
-  border-radius: 4px;
+/* Autocomplete fields */
+.awesomplete > input {
+	border: 1px solid #4da8da;
+	border-radius: 4px;
 }
 
-/* حقول الاختيار */
+/* Select fields */
 select.form-control {
-  border: 1px solid #9c27b0;
-  border-radius: 4px;
-  cursor: pointer;
+	border: 1px solid #9c27b0;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
-`;
-				
-				frm.set_value('css', css_content);
-				frm.set_value('custom_theme_color', 'blue');
-				frm.save().then(() => {
-					// Update Print Settings
-					frappe.call({
-						method: 'frappe.client.set_value',
-						args: {
-							doctype: 'Print Settings',
-							name: 'Print Settings',
-							fieldname: 'print_style',
-							value: 'future'
-						},
-						callback: function(r) {
-							if (!r.exc) {
-								// Clear cache and reload
-								clearCacheAndReload();
-							}
-						}
-					});
-				});
-			},
-			null,
-			'primary'
-		).addClass("btn-blue-theme").css({'background-color': '#7293b0', 'color': '#fff', 'border-color': '#7293b0'});
-	}
-});
+/* hide help menu
+  .dropdown-help span {
+	display: none;
+  }
+  */
 
+/* Close sidebar by default on page load
+  .layout-side-section {
+	display: none;
+  }
+  */
+
+body .container {
+	width: 100% !important;
+	max-width: 100% !important;
+}
+
+.nav a {
+	color: rgba(255, 255, 255, 0.73);
+}
+
+.nav a:hover {
+	color: #c19797;
+}
+`;
+					frm.set_value('css', css_content);
+					frm.set_value('custom_theme_color', 'blue');
+					frm.save().then(() => {
+						// Update Print Settings
+						frappe.call({
+							method: 'frappe.client.set_value',
+							args: {
+								doctype: 'Print Settings',
+								name: 'Print Settings',
+								fieldname: 'print_style',
+								value: 'future',
+							},
+							callback: function (r) {
+								if (!r.exc) {
+									// Clear cache and reload
+									clearCacheAndReload();
+								}
+							},
+						});
+					});
+				},
+				null,
+				'primary',
+			)
+			.addClass('btn-blue-theme')
+			.css({ 'background-color': '#7293b0', color: '#fff', 'border-color': '#7293b0' });
+	},
+});
