@@ -15,7 +15,7 @@ div.page-head.flex {
 }
 
 /* spacer */
-.spacer {
+sidebar .spacer {
 	background-color: #678fb14d;
 	transition: background 0.3s;
 	border-radius: 0.7em;
@@ -129,12 +129,12 @@ div.tab.active {
 .btn.btn-primary {
 	border-radius: 1em !important;
 	border: none;
-	/* Default state background: Keep the dark, simple gradient */
-	background: linear-gradient(120deg, #232946, #1a2233, #323e5c, #232946);
+	/* Default state background: Keep the dark, simple gradient but tweaked to match deep space */
+	background: linear-gradient(120deg, #0d1b2a, #1b263b, #415a77, #0d1b2a);
 	color: #fff;
 	font-weight: bold;
 	padding: 0.75em 2em;
-	box-shadow: 0 2px 8px 0 #23294655;
+	box-shadow: 0 2px 8px 0 #0d1b2a55;
 }
 
 .btn.btn-primary:hover,
@@ -246,19 +246,19 @@ table.table-bordered {
 	box-shadow: 0 0 16px 4px #678fb14d;
 }
 
-/* حقول الإدخال الأساسية */
+/* Input fields */
 .visible-section .control-input > input {
 	border: 1px solid #678fb14d;
 	border-radius: 4px;
 }
 
-/* حقول الإكمال التلقائي */
+/* Autocomplete fields */
 .awesomplete > input {
-	border: 1px solid #4a90e2;
+	border: 1px solid #4da8da;
 	border-radius: 4px;
 }
 
-/* حقول الاختيار */
+/* Select fields */
 select.form-control {
 	border: 1px solid #9c27b0;
 	border-radius: 4px;
@@ -280,4 +280,12 @@ select.form-control {
 body .container {
 	width: 100% !important;
 	max-width: 100% !important;
+}
+
+.nav a {
+	color: rgba(255, 255, 255, 0.73);
+}
+
+.nav a:hover {
+	color: #c19797;
 }
