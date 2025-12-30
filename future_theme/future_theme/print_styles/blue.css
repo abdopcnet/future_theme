@@ -15,14 +15,14 @@ div.page-head.flex {
 }
 
 /* spacer */
-sidebar .spacer {
-	background-color: #678fb14d;
+.spacer {
+	background-color: #678fb1;
 	transition: background 0.3s;
 	border-radius: 0.7em;
 }
 
 .spacer:hover {
-	background-color: #678fb1b8;
+	background-color: #5a7a9a;
 }
 
 /* sidebar */
