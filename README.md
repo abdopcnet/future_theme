@@ -1,50 +1,29 @@
 # Future Theme
 
-![Version](https://img.shields.io/badge/version-30.12.2025-blue)
+![Version](https://img.shields.io/badge/version-1.1.2026-blue)
 
 Custom print style themes for Frappe/ERPNext with color customization.
 
 ## Features
 
--   **Custom Print Styles**: Extends Print Style DocType with theme color picker
--   **Blue Theme**: Professional blue color scheme for print formats
--   **Yellow Theme**: Bright yellow color scheme for print formats
--   **Color Customization**: Custom theme color field for personalized styling
--   **Dynamic CSS Injection**: Real-time theme preview and application
+### Print Style Customization
+- Custom theme color picker field (`custom_theme_color`)
+- Blue Theme preset (professional blue color scheme)
+- Yellow Theme preset (bright yellow color scheme)
+- Dark Blue Theme preset (dark blue color scheme)
+- One-click theme application buttons
 
-## Quick Start
+### UI Enhancements
+- Custom login page styling (`login_bundle.css`)
+- Dynamic CSS injection for print previews
+- Theme preview and real-time application
+- Print Settings auto-update
 
-```bash
-bench get-app future_theme --branch develop
-bench --site [site_name] install-app future_theme
-```
-
-## Usage
-
-1. Navigate to **Print Style** DocType
-2. Create or edit a Print Style with `print_style_name = "future"`
-3. Select your preferred theme color using the **Theme Color** field
-4. Use **Blue Theme** or **Yellow Theme** buttons to apply preset styles
-5. Customize CSS in the CSS field for advanced styling
-
-## Features Preview
-
--   Custom theme color picker integration
--   Blue and yellow preset themes
--   Dynamic CSS injection for print previews
--   Print style customization interface
-
-## Contributing
-
-This app uses `pre-commit` for code formatting and linting:
-
-```bash
-cd apps/future_theme
-pre-commit install
-```
-
-Tools: ruff, eslint, prettier, pyupgrade
-
-## License
-
-MIT
+### Theme Components
+- Navbar styling
+- Page head and body colors
+- Sidebar and spacer styling
+- Form tabs and buttons
+- Widget boxes and shortcuts
+- Input fields and selectors
+- Table headers and list views
