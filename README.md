@@ -1,6 +1,6 @@
 # Future Theme
 
-![Version](https://img.shields.io/badge/version-3.1.2026-blue)
+![Version](https://img.shields.io/badge/version-4.1.2026-blue)
 
 Custom print style themes for Frappe/ERPNext with color customization.
 
